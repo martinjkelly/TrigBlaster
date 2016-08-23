@@ -32,6 +32,7 @@ class GameScene: SKScene {
     
     override func update(currentTime: NSTimeInterval) {
         
+        
     }
     
     func startMonitoringAcceleration() {
@@ -56,8 +57,13 @@ class GameScene: SKScene {
             
             let filterFactor = 0.75
             
+            print("PREVIOUS VALUE", accelerometerX, accelerometerY)
+            print("UNFILTERED", acceleration.x, acceleration.y)
+            
             accelerometerX = acceleration.x * filterFactor + accelerometerX * (1 - filterFactor)
             accelerometerY = acceleration.y * filterFactor + accelerometerY * (1 - filterFactor)
+            
+            print("NEW VALUE", accelerometerX, accelerometerY)
         }
     }
     
