@@ -404,6 +404,7 @@
 				F3B6FEDF1D6CDAC3009B8B9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3B6FEE01D6CDAC3009B8B9E /* Build configuration list for PBXNativeTarget "TrigBlasterTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +413,7 @@
 				F3B6FEE21D6CDAC3009B8B9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
