@@ -15,6 +15,7 @@
 		F3B6FECB1D6CDAC3009B8B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B6FECA1D6CDAC3009B8B9E /* Assets.xcassets */; };
 		F3B6FECE1D6CDAC3009B8B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B6FECC1D6CDAC3009B8B9E /* LaunchScreen.storyboard */; };
 		F3B6FED91D6CDAC3009B8B9E /* TrigBlasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6FED81D6CDAC3009B8B9E /* TrigBlasterTests.swift */; };
+		F3B6FEE61D6CDC40009B8B9E /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = F3B6FEE41D6CDC40009B8B9E /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F3B6FED41D6CDAC3009B8B9E /* TrigBlasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrigBlasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B6FED81D6CDAC3009B8B9E /* TrigBlasterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrigBlasterTests.swift; sourceTree = "<group>"; };
 		F3B6FEDA1D6CDAC3009B8B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3B6FEE41D6CDC40009B8B9E /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				F3B6FEC51D6CDAC3009B8B9E /* GameViewController.swift */,
 				F3B6FEC71D6CDAC3009B8B9E /* Main.storyboard */,
 				F3B6FECA1D6CDAC3009B8B9E /* Assets.xcassets */,
+				F3B6FEE41D6CDC40009B8B9E /* Sounds */,
 				F3B6FECC1D6CDAC3009B8B9E /* LaunchScreen.storyboard */,
 				F3B6FECF1D6CDAC3009B8B9E /* Info.plist */,
 			);
@@ -152,6 +155,7 @@
 				TargetAttributes = {
 					F3B6FEBB1D6CDAC3009B8B9E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S455MGL796;
 					};
 					F3B6FED31D6CDAC3009B8B9E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -183,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B6FEE61D6CDC40009B8B9E /* Sounds in Resources */,
 				F3B6FEC21D6CDAC3009B8B9E /* GameScene.sks in Resources */,
 				F3B6FECE1D6CDAC3009B8B9E /* LaunchScreen.storyboard in Resources */,
 				F3B6FECB1D6CDAC3009B8B9E /* Assets.xcassets in Resources */,
@@ -335,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TrigBlaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scriptable.TrigBlaster;
@@ -346,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TrigBlaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scriptable.TrigBlaster;

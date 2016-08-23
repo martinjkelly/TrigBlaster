@@ -7,39 +7,62 @@
 //
 
 import SpriteKit
+import CoreMotion
 
 class GameScene: SKScene {
+
+    // MARK: CoreMotion
+    var accelerometerX: UIAccelerationValue = 0
+    var accelerometerY: UIAccelerationValue = 0
+    let motionManager = CMMotionManager()
+    
+    // MARK: Sprites
+    let playerSprite = SKSpriteNode(imageNamed: "Player")
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+    
+        size = view.bounds.size
+        backgroundColor = SKColor(red: 94.0/255, green: 63.0/255, blue: 107.0/255, alpha: 1)
         
-        self.addChild(myLabel)
+        playerSprite.position = CGPoint(x: size.width - 50, y: 60)
+        addChild(playerSprite)
+        
+        startMonitoringAcceleration()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+    override func update(currentTime: NSTimeInterval) {
         
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+    }
+    
+    func startMonitoringAcceleration() {
+        
+        if motionManager.accelerometerAvailable {
+            motionManager.startAccelerometerUpdates()
+            print("accelerometer updates on")
         }
     }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+    
+    func stopMonitoringAcceleration() {
+        
+        if motionManager.accelerometerAvailable && motionManager.accelerometerActive {
+            motionManager.stopAccelerometerUpdates()
+            print("accelerometer updates off")
+        }
     }
+    
+    func updatePlayerAccelerationFromMotionManager() {
+        
+        if let acceleration = motionManager.accelerometerData?.acceleration {
+            
+            let filterFactor = 0.75
+            
+            accelerometerX = acceleration.x * filterFactor + accelerometerX * (1 - filterFactor)
+            accelerometerY = acceleration.y * filterFactor + accelerometerY * (1 - filterFactor)
+        }
+    }
+    
+    deinit {
+        stopMonitoringAcceleration()
+    }
+    
 }
